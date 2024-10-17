@@ -1,8 +1,10 @@
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-document.getElementById("get").addEventListener("click",
+
+// ランダムボタンをクリックしてポケモンの情報を取得する
+document.getElementById("random-btm").addEventListener("click",
   async () => {
-    const response = await fetch(apiUrl + Math.floor(Math.random() * 493));
+    const response = await fetch(apiUrl + Math.floor(Math.random() * 1025));
   const pokemon = await response.json();
   const image = document.createElement("img");
   const name = document.createElement("p");
@@ -13,6 +15,29 @@ document.getElementById("get").addEventListener("click",
   pokemonDiv.appendChild(image);
   pokemonDiv.appendChild(name);
 });
+
+// ポケモンの名前を入力して検索ボタンをクリックしてポケモンの情報を取得する
+document.getElementById("search-btm").addEventListener("click",
+  async () => {
+    try{
+    const searchName = document.getElementById("poke-form").value.toLowerCase();
+    const response = await fetch(apiUrl + searchName);
+    const pokemon = await response.json();
+    const image = document.createElement("img");
+    const nameElement = document.createElement("p");
+    image.src = pokemon.sprites.front_default;
+    nameElement.textContent = pokemon.name;
+    const pokemonDiv = document.getElementById("pokemon");
+    pokemonDiv.innerHTML = "";
+    pokemonDiv.appendChild(image);
+    pokemonDiv.appendChild(nameElement);
+    } catch (error) {
+      console.error("Error fetching Pokémon data:", error);
+      alert("ポケモンが見つかりませんでした");
+    }
+});
+
+
 
 const getPokemon = () => {
   const promise = [];

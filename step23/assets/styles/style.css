@@ -18,18 +18,35 @@ body {
   margin: 0 auto;
 }
 
-#get {
+#poke-form {
+  width: 200px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+#search-btm {
+  background-color: lightskyblue;
+  width: px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+#search-btm:hover {
+  cursor: pointer;
+}
+
+#random-btm {
   background-color: lightgrey;
   padding: 10px 20px;
   border-radius: 4px;
   border: gray 2px solid;
 }
 
-#get:hover {
+#random-btm:hover {
   cursor: pointer;
 }
 
-#get:active {
+#random-btm:active {
   background-color: grey;
 }
 
@@ -64,7 +81,7 @@ p {
   text-transform: uppercase;
   font-size: 32px;
   font-weight: normal;
-  margin-bottom: 0;;
+  margin: 0;;
   text-align: center;
 }
 
