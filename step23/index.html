@@ -2,15 +2,28 @@
 <html lang="en">
  <head>
    <meta charset="UTF-8">
-   <h1>PokeDex</h1>
+   <h1 id="title">PokeDex</h1>
    <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
  </head>
  <body>
+  <div class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <p class="modal-message">開きました。</p>
+      </div>
+    </div>
+  </div>
+
+
    <div class="wrapper">
-      <input type="text" id="poke-form" placeholder="Name or id"></input>
+      <input type="text" id="js-poke-form" placeholder="Name or id"></input>
       <button id="search-btm">Search</button>
+      <p class="poke-name-english">
+        <a href="https://wiki.xn--rckteqa2e.com/wiki/%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%81%AE%E5%A4%96%E5%9B%BD%E8%AA%9E%E5%90%8D%E4%B8%80%E8%A6%A7" target="_blank">You can find Pokemon names in English here</a>
+      </p>
       <button id="random-btm">Get Random Pokemon</button>
       <div id="pokemon"></div>
    </div>
@@ -19,6 +32,8 @@
     <ol id="pokedex"></ol>
    </div>
    <div id="poke_container" class="poke_container"></div>
+
+   
    <script src="./assets/scripts/main.js"></script>
  </body>
 </html>

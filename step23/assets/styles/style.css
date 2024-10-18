@@ -11,6 +11,76 @@ body {
   background: radial-gradient(#F2B9A1, #62eac4 ) 
 
 }
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 54px;
+}
+
+/*
+モーダルウィンドウのスタイル
+*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0,0,0,50%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  box-sizing: border-box;
+}
+
+.modal.is-active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 600px;
+  width: 90%;
+}
+
+.modal-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-content{
+  background: #fff;
+  text-align: left;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+.modal-message{
+  margin: 1em 0;
+}
+
+
+
+/*
+検索フォームとランダムボタンのスタイル
+*/
 .wrapper {
   text-align: center;
   width: 300px;
@@ -18,10 +88,10 @@ body {
   margin: 0 auto;
 }
 
-#poke-form {
+#js-poke-form {
   width: 200px;
   height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 #search-btm {
@@ -33,6 +103,14 @@ body {
 
 #search-btm:hover {
   cursor: pointer;
+}
+
+p.poke-name-english {
+  text-align: center;
+  width: max-content;
+  margin:0 0 20px 0;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 #random-btm {
@@ -50,6 +128,12 @@ body {
   background-color: grey;
 }
 
+
+
+
+/*
+ポケモン一覧表示のスタイル
+*/
 #pokemon {
   background-color: #dee8f1;
   border-radius: 8px;
@@ -61,10 +145,6 @@ body {
 #pokemon img {
   width: 180px;
 
-}
-p {
-  border-bottom: 3px solid #fff;
-  font-size: 24px;
 }
 
 .card {
@@ -108,8 +188,3 @@ p {
   margin: 0 auto;
 }
 
-h1 {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 54px;
-}
