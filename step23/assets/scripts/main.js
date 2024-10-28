@@ -89,10 +89,13 @@ const displayPokemon = (pokemon) => {
       };
     const flavorTextEntries = species.flavor_text_entries;
     let flavorText = getFlavorText(flavorTextEntries, "sword") || 
+                      getFlavorText(flavorTextEntries, "shield") ||
+                      getFlavorText(flavorTextEntries, "x") ||
                       getFlavorText(flavorTextEntries, "y") || 
                       getFlavorText(flavorTextEntries, "sun") ||
-                      getFlavorText(flavorTextEntries, "violet") ||
-                      getFlavorText(flavorTextEntries, "legends-arceus") ||
+                      getFlavorText(flavorTextEntries, "moon") ||
+                      getFlavorText(flavorTextEntries, "ultra-sun") ||
+                      getFlavorText(flavorTextEntries, "ultra-moon") ||
                       "日本語での説明が見つかりません";
     
     // タイプを取得
